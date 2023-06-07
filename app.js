@@ -17,6 +17,27 @@ app.get("/", function(req, res) {
   res.render("home", {startingContent: homeStartingContent});
 });
 
+app.get("/about", function(req, res) {
+  res.render("about", {aboutContent: aboutContent});
+});
+
+app.get("/contact", function(req, res) {
+  res.render("contact", {contactContent: contactContent});
+});
+
+app.get("/compose", function(req, res) {
+  res.render("compose");
+});
+
+app.post("/compose", function(req, res) {
+
+  const newPost = {
+    title: req.body.postTitle,
+    content: req.body.postBody
+  }
+  console.log(newPost);  
+});
+
 
 
 
